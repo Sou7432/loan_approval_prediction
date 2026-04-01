@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Application - Financial Services</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .header p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      form {
+        padding: 40px 30px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      label {
+        display: block;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f7fafc;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #667eea;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      input::placeholder {
+        color: #a0aec0;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      .info-text {
+        text-align: center;
+        color: #718096;
+        font-size: 0.85rem;
+        margin-top: 20px;
+      }
+
+      @media (max-width: 600px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        form {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Loan Application</h1>
+        <p>Complete the form below to check your eligibility</p>
+      </div>
+
+      <form action="/process" method="post">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="Enter your age"
+              required
+              min="18"
+              max="100"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="creditscore">Credit Score</label>
+            <input
+              type="number"
+              id="creditscore"
+              name="creditscore"
+              placeholder="300-850"
+              required
+              min="300"
+              max="850"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="income">Annual Income ($)</label>
+            <input
+              type="number"
+              id="income"
+              name="income"
+              placeholder="e.g., 50000"
+              required
+              min="0"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="coincome">Co-Applicant Income ($)</label>
+            <input
+              type="number"
+              id="coincome"
+              name="coincome"
+              placeholder="e.g., 30000"
+              required
+              min="0"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="loanamount">Loan Amount ($)</label>
+            <input
+              type="number"
+              id="loanamount"
+              name="loanamount"
+              placeholder="e.g., 200000"
+              required
+              min="1000"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="loanduration">Loan Duration (months)</label>
+            <input
+              type="number"
+              id="loanduration"
+              name="loanduration"
+              placeholder="e.g., 360"
+              required
+              min="1"
+            />
+          </div>
+        </div>
+
+        <button type="submit">Submit Application</button>
+
+        <p class="info-text">Your information is secure and confidential</p>
+      </form>
+    </div>
+  </body>
+</html>

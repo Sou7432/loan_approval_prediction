@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Decision - Financial Services</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 30px;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      .content {
+        padding: 50px 30px;
+      }
+
+      .result {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 30px 0;
+        padding: 20px;
+        border: 3px solid #667eea;
+        border-radius: 12px;
+        display: inline-block;
+      }
+
+      .message {
+        color: #2d3748;
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 14px 40px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      .back-button:active {
+        transform: translateY(0);
+      }
+
+      .icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+
+      .footer {
+        background: #f7fafc;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .developer {
+        color: #2d3748;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+      }
+
+      .contact {
+        color: #667eea;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      @media (max-width: 600px) {
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        .result {
+          font-size: 1.8rem;
+        }
+
+        .content {
+          padding: 40px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Loan Application Result</h1>
+      </div>
+
+      <div class="content">
+        <div class="icon">📋</div>
+
+        <p class="message">Your loan application has been processed</p>
+
+        <div class="result">{{ prediction }}</div>
+
+        <a href="/" class="back-button">← Submit New Application</a>
+      </div>
+
+      <div class="footer">
+        <p class="developer">Created by <strong>Soumya Mandal</strong></p>
+        <p class="contact">mandalSoumya38@gmail.com</p>
+      </div>
+    </div>
+  </body>
+</html>
